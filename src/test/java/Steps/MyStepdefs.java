@@ -10,4 +10,11 @@ public class MyStepdefs {
         // Write code here that turns the phrase above into concrete actions
         BDDStyleMethod.simpleGetPostsMethod(url,resource,postNumber,author);
     }
+
+    @Given("^I need to set the BaseUrl to \"([^\"]*)\" and do GET operation for resource \"([^\"]*)\" and verify authorList$")
+    public void iNeedToSetTheBaseUrlToAndDoGETOperationForResourceAndVerifyAuthorList(String url, String resource) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        String authorList[]={"Aniket","Shalini"};
+        BDDStyleMethod.performContainsCollection(url,resource,authorList);
+    }
 }
