@@ -18,7 +18,7 @@ Below are few of the examples of BDD structure that Rest Assured provides :
             pathParam("id", postNumber).
         when().
             get(resource + "/{id}").
-        then().
+        then().assertThat().
             body("author", containsString(author)).
             statusCode(200);
 
@@ -29,7 +29,7 @@ Below are few of the examples of BDD structure that Rest Assured provides :
             queryParam("id", postNumber).
         when().
             get(resource).
-        then().
+        then().assertThat().
             body("author", hasItem(author)).
             statusCode(200);
  
@@ -40,7 +40,7 @@ Below are few of the examples of BDD structure that Rest Assured provides :
         when().
             post(resource).
             bosy(payload).
-        then().
+        then().assertThat().
             body("author", hasItem(author)).
             statusCode(200);
 
